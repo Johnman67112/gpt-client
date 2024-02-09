@@ -8,7 +8,8 @@ import (
 func HandleRequests() {
 	r := gin.Default()
 
-	r.POST("/gpt", core.ChatText)
+	r.POST("/gpt/parsed", core.ChatText)
+	r.POST("/gpt", core.ChatCrudeText)
 
 	r.Run()
 }

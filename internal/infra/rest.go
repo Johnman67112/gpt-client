@@ -11,9 +11,11 @@ import (
 	"github.com/hashicorp/go-retryablehttp"
 )
 
+var GeneralClient *Client
+
 type Config struct {
-	Endpoint string `env: "CHATGPT_URL" envDefault:"http://localhost:8000"`
-	ApiKey   string `env: "CHATGPT_APIKEY" envDefault:"1234"`
+	Endpoint string `env:"CHATGPT_URL" envDefault:"http://localhost:8000"`
+	ApiKey   string `env:"CHATGPT_APIKEY" envDefault:"1234"`
 }
 
 type Client struct {
