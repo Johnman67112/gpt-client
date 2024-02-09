@@ -1,12 +1,11 @@
 /*
 Copyright © 2024 NAME HERE <EMAIL ADDRESS>
-
 */
 package cmd
 
 import (
-	"fmt"
-
+	"github.com/Johnman67112/gpt-client/internal/ui"
+	"github.com/joho/godotenv"
 	"github.com/spf13/cobra"
 )
 
@@ -21,7 +20,8 @@ Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("run called")
+		godotenv.Load(".env")
+		ui.HandleRequests()
 	},
 }
 
